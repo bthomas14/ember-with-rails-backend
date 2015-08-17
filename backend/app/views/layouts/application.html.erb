@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ember CLI App</title>
+  <%= stylesheet_link_tag    "/assets/app", media: "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="app">
+  </div>
+  <noscript>
+    <%= render @content if @content%>
+  </noscript>
+
+  <script>
+    window.ENV = {};
+  </script>
+  <%= javascript_include_tag '/assets/app' %>
+  <script>
+    window.Frontend = require('frontend/main')['default']('frontend', {
+      rootElement: '#app'
+    });
+  </script>
+</body>
+</html>
